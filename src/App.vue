@@ -1,31 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <AddTodo/>
+    <FilterTodo/>
+    <Todos/>
   </div>
 </template>
+<script>
+import Todos from './components/Todos'
+import AddTodo from './components/AddTodo'
+import FilterTodo from './components/FilterTodo'
+export default {
+  name: 'app',
+  components: {
+    Todos,
+    AddTodo,
+    FilterTodo
+  }
+}
+</script>
 
 <style>
+body {
+  background: #cccccc;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: left;
+  width: 1100px;
+  margin: 60px auto;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+h3 {
+  padding: 10px;
+  margin: 0;
 }
 </style>
